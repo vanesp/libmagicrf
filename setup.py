@@ -74,6 +74,6 @@ setup(
     # https://packaging.python.org/en/latest/requirements.html
     install_requires=['pyserial >= 3.4'],
 
-    ext_modules=[Extension('magicrf._m100', sources=['src/_m100.c', 'src/lib/_protocol.c']),
+    ext_modules=[Extension('magicrf._m100', sources=['src/_m100.c', 'src/lib/_protocol.c'], include_dirs=['src','src/lib/']),
                 ],
 )

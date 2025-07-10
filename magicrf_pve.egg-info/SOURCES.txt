@@ -1,0 +1,16 @@
+LICENSE
+README.md
+README.rst
+pyproject.toml
+setup.cfg
+setup.py
+magicrf/CONSTANT.py
+magicrf/__init__.py
+magicrf/case1.py
+magicrf/case2.py
+magicrf_pve.egg-info/PKG-INFO
+magicrf_pve.egg-info/SOURCES.txt
+magicrf_pve.egg-info/dependency_links.txt
+magicrf_pve.egg-info/top_level.txt
+src/_m100.c
+src/lib/_protocol.c
