@@ -422,7 +422,9 @@ static void __callback_event( unsigned char *user_data, unsigned int size )
     hexinRingBufferRead( &ringbuffer, cb_buffer, size, &length );
 
     arglist = Py_BuildValue( "(z#)", cb_buffer, length );
-    PyEval_CallObject( (PyObject *)cb_unpack_handler, arglist );
+    // PvE: changed
+    // PyEval_CallObject( (PyObject *)cb_unpack_handler, arglist );
+    PyObject_CallFunction( (PyObject *)cb_unpack_handler, arglist );
     Py_DECREF( arglist );
 }
 

@@ -16,12 +16,13 @@ from magicrf import m100
 
 
 import serial.tools.list_ports
-PLIST = list(serial.tools.list_ports.comports())
-if (len(PLIST) <= 0):
-    sys.stderr.write('Could not find serial port !!!\n')
-    sys.exit(1)
+# PLIST = list(serial.tools.list_ports.comports())
+# if (len(PLIST) <= 0):
+#     sys.stderr.write('Could not find serial port !!!\n')
+#    sys.exit(1)
 
-SERIAL_PORT = list(PLIST[0])[0]
+# SERIAL_PORT = list(PLIST[0])[0]
+SERIAL_PORT = '/dev/tty.usbmodem59740533331'
 print(SERIAL_PORT)
 
 
@@ -54,8 +55,7 @@ def realtime_threading( queue ):
             print('{0} -> {1} RSSI: -{2} dBm'.format(timenow, epc, int(rssi, 16)))
     queue.task_done()
 
-REALTIME_THD = threading.Thread( target=realtime_threading, args=( QUEUE_READER, ) )
-REALTIME_THD.setDaemon(True)
+REALTIME_THD = threading.Thread( target=realtime_threading, args=( QUEUE_READER, ), daemon=True )
 REALTIME_THD.start()
 
 

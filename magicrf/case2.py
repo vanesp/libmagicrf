@@ -12,7 +12,7 @@ import queue
 import threading
 from magicrf import m100
 
-SERIAL_PORT = 'COM14'
+SERIAL_PORT = '/dev/tty.usbmodem59740533331'
 
 QUEUE_READER = queue.Queue(2048)
 
@@ -52,8 +52,7 @@ def realtime_threading( queue ):
                 del tags[key]
 
 
-REALTIME_THD = threading.Thread( target=realtime_threading, args=( QUEUE_READER, ) )
-REALTIME_THD.setDaemon(True)
+REALTIME_THD = threading.Thread( target=realtime_threading, args=( QUEUE_READER, ), daemon=True )
 REALTIME_THD.start()
 
 for _ in ( READER.power(22), READER.mode(), READER.hfss(m100.HFSS_AUTO), READER.param(q=4) ):

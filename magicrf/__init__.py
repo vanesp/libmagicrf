@@ -54,7 +54,7 @@ class m100( Protocol ):
     MODE_HIGH_SENSITIVITY = _m100.MODE_HIGH_SENSITIVITY
     MODE_DENSE_READER     = _m100.MODE_DENSE_READER
 
-    def __init__(self, port='COM1', baudrate=115200, bytesize=8, parity=serial.PARITY_NONE, stop=serial.STOPBITS_ONE):
+    def __init__(self, port='/dev/tty.usbmodem59740533331', baudrate=115200, bytesize=8, parity=serial.PARITY_NONE, stop=serial.STOPBITS_ONE):
         super( m100, self ).__init__()
         self.ser = serial.serial_for_url(port, do_not_open=True)
         self.ser.baudrate = baudrate
