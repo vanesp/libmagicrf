@@ -63,7 +63,6 @@ setup(
         'Programming Language :: Python :: Implementation :: PyPy',
     ],
 
-    # What does your project relate to?
     keywords=['UHF', 'M100', 'QM100', 'rfid', 'magicrf'],
 
     packages=['magicrf'],

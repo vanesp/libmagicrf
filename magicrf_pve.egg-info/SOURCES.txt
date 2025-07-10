@@ -14,3 +14,4 @@ magicrf_pve.egg-info/dependency_links.txt
 magicrf_pve.egg-info/top_level.txt
 src/_m100.c
 src/lib/_protocol.c
+src/lib/_protocol.h
